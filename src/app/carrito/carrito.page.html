@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Carrito</ion-card-title>
+      <ion-card-subtitle>Productos</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content *ngFor="let prod of temporal">
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="../../assets/productos-img/{{prod.IMAPRO}}" />
+          </ion-thumbnail>
+          <ion-label>{{prod.NOMPRO}}</ion-label>
+          <ion-label>S/{{prod.PREPRO}}</ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

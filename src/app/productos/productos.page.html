@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="mycolor">
+    <ion-title class="title">Tienda</ion-title>
+    
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [formControl]="nombre" (ionChange)="prueba($event)" placeholder="Search"></ion-searchbar>
+
+  <ion-card *ngFor="let prod of productos">
+    <img alt="40px" src="../../assets/productos-img/{{prod.imagen}}" class="img"/>
+    <div class="conteiner">
+    <ion-card-header >
+      <ion-card-title>{{prod.nombre}}</ion-card-title>
+      <ion-card-subtitle>{{prod.marca}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{prod.descripcion}}
+    </ion-card-content>
+  </div>
+    <ion-button color="success"  (click)="produc(prod)">Añadir</ion-button>
+  </ion-card>
+</ion-content>

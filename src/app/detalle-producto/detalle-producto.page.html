@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="mycolor">
+    <ion-title class="title">Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card color="success">
+    <img alt="40px" src="../../assets/productos-img/{{imagens}}" class="img" />
+    <div class="conteiner">
+      <ion-card-header>
+        <ion-card-title id="nombre">{{nombre}}</ion-card-title>
+        <ion-card-subtitle>{{descripcion}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{precio}}
+      </ion-card-content>
+    </div>
+  </ion-card>
+  <form [formGroup]="productoForm" (ngSubmit)="tablaTemporal()">
+    <ion-item>
+      <ion-label position="floating" id="cant" >Cantidad</ion-label>
+      <ion-input placeholder="Ingrese la cantidad" type="number" formControlName="CANVENDET" (ionChange)="total()"></ion-input>
+    </ion-item>
+    <h3 id="total">Total S/{{vtotal}}</h3>
+    <ion-button shape="round" color="success" type="submit" size="large" id="btn">Anadir</ion-button>
+  </form>
+</ion-content>

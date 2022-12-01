@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="mycolor">
+    <ion-title>customers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor=" let user of users">
+      <ion-avatar slot="start">
+        <img src="../../assets/customers-img/{{user.image}}">
+      </ion-avatar>
+      <ion-avatar slot="end">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{user.name}}</h2>
+        
+        <p>{{user.descripcion}}</p>
+
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

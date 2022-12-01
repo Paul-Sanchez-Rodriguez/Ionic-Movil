@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cliente-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ClienteForm" (ngSubmit)="register()">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="nombre" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Apellido paterno</ion-label>
+      <ion-input formControlName="apellidoPat" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Apellido materno</ion-label>
+      <ion-input formControlName="apellidoMat" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">DNI</ion-label>
+      <ion-input formControlName="dni" type="number" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Celular</ion-label>
+      <ion-input formControlName="celular" type="number" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input formControlName="direccion" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Distrito</ion-label>
+      <ion-select interface="popover" placeholder="Select fruit" formControlName="ubigeo">
+        <ion-select-option *ngFor="let ubi of ubigeo" [value]="ubi.id" >{{ubi.distrito}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input formControlName="usuario" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="contraseña" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block" id="btn">Registrar</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>
