@@ -2,12 +2,15 @@
   <ion-toolbar color="mycolor">
     <ion-title class="title">Tienda</ion-title>
     
-    
+    <div class="avatar">
+      <ion-icon name="cart-outline" (click)="redirigirCars()"></ion-icon>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [formControl]="nombre" (ionChange)="prueba($event)" placeholder="Search"></ion-searchbar>
+  <ion-searchbar [formControl]="nombre" placeholder="Search"></ion-searchbar>
+ 
 
   <ion-card *ngFor="let prod of productos">
     <img alt="40px" src="../../assets/productos-img/{{prod.imagen}}" class="img"/>

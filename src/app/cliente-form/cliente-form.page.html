@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>cliente-form</ion-title>
+  <ion-toolbar color="mycolor">
+    <ion-title>Registro de Cliente</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -33,7 +33,7 @@
 
     <ion-item lines="full">
       <ion-label position="floating">Distrito</ion-label>
-      <ion-select interface="popover" placeholder="Select fruit" formControlName="ubigeo">
+      <ion-select interface="popover" placeholder="Selecciona el distrito" formControlName="ubigeo">
         <ion-select-option *ngFor="let ubi of ubigeo" [value]="ubi.id" >{{ubi.distrito}}</ion-select-option>
       </ion-select>
     </ion-item>
@@ -53,5 +53,10 @@
       </ion-col>
     </ion-row>
 
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="cancelar()" color="danger" expand="block" id="btn2">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
   </form>
 </ion-content>

@@ -19,7 +19,7 @@ export class ProductosPage implements OnInit {
 
   ngOnInit() {
     this.finall();
-   
+    this.buscador()
   }
 
   finall() {
@@ -58,15 +58,18 @@ export class ProductosPage implements OnInit {
         switchMap(search=>{
           if (search){
             return this.productoservice.finByName(search);
-            
+
           }
           return this.productoservice.findall();
         })
-    ).subscribe(res  => {
+    ).subscribe((res) => {
       this.productos = res;
       console.log(res)
     })
   
   }
 
+  redirigirCars(){
+    this.route.navigate(['carrito'])
+  }
 }

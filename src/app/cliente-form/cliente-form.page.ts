@@ -46,7 +46,7 @@ export class ClienteFormPage implements OnInit {
     this.clienteService.register(this.ClienteForm.value).subscribe(res =>{
       console.log('res ' ,res)
       
-      this.showMessage(`Hola  has sido registrado con exito`)
+      this.showMessage('Hola  has sido registrado con exito')
       this.ClienteForm.reset();
       this.router.navigate(['login']);
     })
@@ -66,5 +66,12 @@ export class ClienteFormPage implements OnInit {
     return this.ubigeoService.finAll().subscribe(res =>{
       this.ubigeo = res;
     })
+  }
+
+
+  cancelar(){
+    this.ClienteForm.reset();
+    this.showMessage('Cancelado con exito');
+    this.router.navigate(['login']);
   }
 }

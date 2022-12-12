@@ -5,6 +5,7 @@ import { NumericValueAccessor } from '@ionic/angular';
 import { tablaTemporal } from '../dtos/producto.model';
 import { ProductoService } from '../services/productos/producto.service';
 import { VentaDetalleService } from '../services/venta-detalle/venta-detalle.service';
+import { VentaService } from '../services/venta/venta.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -73,6 +74,7 @@ export class DetalleProductoPage implements OnInit {
     }
 
   añadirTablaTemporal(datos: tablaTemporal) {
+    console.log(VentaService.idcli)
     this.ventaDetalleService.añadirTabla(datos)
    
     this.router.navigate(['productos'])

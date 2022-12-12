@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { logindto } from '../dtos/login.dto';
 import { ClienteService } from '../services/clientes/cliente.service';
+import { VentaService } from '../services/venta/venta.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginPage implements OnInit {
   constructor(private fb: FormBuilder,
     private router: Router,
     public clienteService: ClienteService,
-    private toastController: ToastController) {
+    private toastController: ToastController,
+    private ventaService:VentaService) {
 
   }
 
@@ -35,6 +37,7 @@ export class LoginPage implements OnInit {
     this.clienteService.login(logins).subscribe(res => {
       if (res && res.length > 0) {
         const user = res[0];
+        VentaService.idcli = user.id;
         switch (user.rol) {
           case 'C':
             this.router.navigate(['productos']);
@@ -58,5 +61,9 @@ export class LoginPage implements OnInit {
     });
 
     await toast.present();
+  }
+
+  redirigir(){
+    this.router.navigate(['cliente-form']);
   }
 }

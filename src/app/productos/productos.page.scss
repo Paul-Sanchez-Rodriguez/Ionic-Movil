@@ -14,5 +14,25 @@ ion-toolbar{
 
 .title{
 text-align: center;
+position: relative;
+top: 10px;
+}
+
+.avatar{
+    width: 35px;
+    height: 35px;
+    background-color: #6b45bc;
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    left: 230px;
+    top: -20px;
+    ion-icon{
+        width: 90%;
+        height: 90%;
+    }
 }
 

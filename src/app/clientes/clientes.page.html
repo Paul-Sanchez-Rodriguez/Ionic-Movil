@@ -1,13 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>clientes</ion-title>
+  <ion-toolbar color="mycolor">
+    <ion-title class="title">clientes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let cli of cliente">
-      <ion-label>{{cli.nombre}} {{cli.apellidoPat}} {{cli.apellidoMat}}</ion-label>
-    </ion-item>
-  </ion-list>
+ 
+
+  <ion-card *ngFor="let cli of cliente">
+    <ion-card-header>
+      <ion-card-title>Nombre:  {{cli.nombre}}</ion-card-title>
+      <ion-card-subtitle>Apellidos:  {{cli.apellidoPat}} {{cli.apellidoMat}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
